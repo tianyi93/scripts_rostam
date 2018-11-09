@@ -8,7 +8,23 @@ echo "cxx compiler?"
 read -p "CXX comiler : " compiler_cxx
 echo "c compiler?"
 read -p "C compiler : " comiler_c
-cd ../hpx
+cd ~/
+if [ ! -d "pkgs_auto" ]; then
+		mkdir ~/pkgs_auto
+		cd ~/pkgs_auto
+fi
+if [ ! -d "hpx" ]; then
+		echo "How do you want to clone,h or s?"
+		read clone
+		if [ "$clone"="h"]
+				git clone https://github.com/STEllAR-GROUP/hpx.git
+		else
+				git clone git@github.com:STEllAR-GROUP/hpx.git
+		fi
+fi
+
+cd ~/pkgs/hpx
+
 mkdir build_${compiler_cxx}_${machine}_${mode}
 cd  build_${compiler_cxx}_${machine}_${mode}
 cmake	\
@@ -19,4 +35,6 @@ cmake	\
 -DHPX_WITH_MALLOC=tcmalloc	\
 -DHPX_WITH_THREAD_LOCAL_STORAGE=ON	\
 ..
-make -j12
+make core -j12
+
+

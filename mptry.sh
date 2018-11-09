@@ -17,9 +17,9 @@ cmake -DCMAKE_BUILD_TYPE=${mode} \
 -DCMAKE_CXX_COMPILER=${compiler_cxx}	\
 -DCMAKE_C_COMPILER=/opt/mn/clang/6.0.1/bin/${compiler_c}	\
 -DCMAKE_ASM_COMPILER=${compiler_c}	\
--DHPX_DIR=hpx 	\
+-DHPX_DIR=/home/tzhang/hpx/build_${compiler_cxx}_${machine}_${mode}/lib/cmake/HPX 	\
 -DCMAKE_CXX_FLAGS=-stdlib=libc++ ..
 
 make -j5
 
-#-DHPX_DIR=/home/tzhang/hpx/build_${compiler_cxx}_${machine}_${mode}/lib/cmake/HPX 	\
+
