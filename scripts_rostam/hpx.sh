@@ -24,10 +24,8 @@ if [ ! -d "hpx" ]; then
 		fi
 fi
 
-boost_root=""
 stdlib=""
 if [ "$cpp" = "clang++" ]; then
-	boost_root="/home/tianyi/pkgs/repo/boost/boost-1.67.0/${mode}"
 	stdlib="-stdlib=libc++"
 fi
 
@@ -47,7 +45,6 @@ cmake	\
 -DCMAKE_BUILD_TYPE=${mode}	\
 -DHPX_WITH_MALLOC=tcmalloc	\
 -DHPX_WITH_THREAD_LOCAL_STORAGE=ON	\
--DBOOST_ROOT=${boost_root}	\
 -DCMAKE_CXX_FLAGS=${stdlib}	\
 ..
 make core -j12
