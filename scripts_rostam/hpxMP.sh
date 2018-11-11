@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "this script is used for build hpxMP on local machine"
+echo "this script is used for build hpxMP on rostam"
 echo " build_mode?" 
 read -p "build_mode: " mode
 echo "machine?"
