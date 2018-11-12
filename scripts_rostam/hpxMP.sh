@@ -46,10 +46,13 @@ echo "${stdlib}"
 cmake -DCMAKE_BUILD_TYPE=${mode} \
 -DCMAKE_CXX_COMPILER=${compiler_cxx}	\
 -DCMAKE_C_COMPILER=${compiler_c}	\
--DHPX_DIR=~/pkgs_auto/hpx/build_${compiler_cxx}_${machine}_${mode}/lib/cmake/HPX 	\
 -DCMAKE_CXX_FLAGS=${stdlib}	\
+-DHPX_DIR=~/pkgs_auto/hpx/build_${compiler_cxx}_${machine}_${mode}/lib/cmake/HPX 	\
 -DCMAKE_ASM_COMPILER=${compiler_c} ..
 
 make -j5
+
+
+
 
 

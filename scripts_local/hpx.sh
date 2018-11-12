@@ -26,13 +26,15 @@ fi
 
 boost_root=""
 stdlib=""
+boost_lib=""
 if [ "$cpp" = "clang++" ]; then
-	boost_root="/home/tianyi/pkgs/repo/boost/boost-1.67.0/${mode}"
+	boost_root="~/pkgs_auto/boost/boost-1.67.0/${mode}"
+#    boost_lib="~/pkgs_auto/boost/boost-1.67.0/${mode}/lib"
 	stdlib="-stdlib=libc++"
 fi
 
 echo "$boost_root"
-
+echo "$boost_lib"
 cd ~/pkgs_auto/hpx
 
 if [ -d "build_${cpp}_${machine}_${mode}" ]; then
@@ -48,6 +50,7 @@ cmake	\
 -DHPX_WITH_MALLOC=tcmalloc	\
 -DHPX_WITH_THREAD_LOCAL_STORAGE=ON	\
 -DBOOST_ROOT=${boost_root}	\
+-DBOOST_LIBRARYDIR=${boost_lib}	\
 -DCMAKE_CXX_FLAGS=${stdlib}	\
 ..
 make core -j12
