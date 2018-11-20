@@ -38,7 +38,7 @@ stdlib=""
 
 if [ "$compiler_cxx" = "clang++" ]; then
 	echo "clang++"
-	stdlib="-stdlib=libc++"
+#	stdlib="-stdlib=libc++"
 fi
 
 echo "${stdlib}"
@@ -51,5 +51,5 @@ cmake -DCMAKE_BUILD_TYPE=${mode} \
 -DCMAKE_ASM_COMPILER=${compiler_c} ..
 
 make -j5
-
+make test
 

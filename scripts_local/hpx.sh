@@ -30,7 +30,7 @@ boost_lib=""
 if [ "$cpp" = "clang++" ]; then
 	boost_root="~/pkgs_auto/boost/boost-1.67.0/${mode}"
 #    boost_lib="~/pkgs_auto/boost/boost-1.67.0/${mode}/lib"
-	stdlib="-stdlib=libc++"
+#	stdlib="-stdlib=libc++"
 fi
 
 echo "$boost_root"
