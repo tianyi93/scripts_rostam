@@ -46,6 +46,7 @@ cmake	\
 -DHPX_WITH_MALLOC=tcmalloc	\
 -DHPX_WITH_THREAD_LOCAL_STORAGE=ON	\
 -DCMAKE_CXX_FLAGS=${stdlib}	\
+-DHPX_WITH_THREAD_IDLE_RATES=ON	\
 ..
 make core -j12
 
