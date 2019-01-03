@@ -52,6 +52,7 @@ cmake	\
 -DBOOST_ROOT=${boost_root}	\
 -DBOOST_LIBRARYDIR=${boost_lib}	\
 -DCMAKE_CXX_FLAGS=${stdlib}	\
+-DHPX_WITH_THREAD_IDLE_RATES=ON	\
 ..
 make core -j12
 
