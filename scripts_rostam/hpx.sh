@@ -33,6 +33,8 @@ echo "$boost_root"
 
 cd ~/pkgs_auto/hpx
 
+git pull
+
 if [ -d "build_${cpp}_${machine}_${mode}" ]; then
 	rm -r -f build_${cpp}_${machine}_${mode}
 fi
